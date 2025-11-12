@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>College Event Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+    <!-- ================= HEADER ================= -->
+    <header class="bg-purple-700 text-white shadow-lg sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto flex items-center justify-between p-4 md:p-5">
+        <h1 class="text-2xl font-bold tracking-wide">College Event Hub</h1>
+
+        <nav>
+          <ul class="flex space-x-6 text-sm md:text-base">
+            <li><a href="#" id="homeBtn" class="hover:text-yellow-300">Home</a></li>
+            <li><a href="#" id="eventsBtn" class="hover:text-yellow-300">Events</a></li>
+            <li><a href="#" id="aboutBtn" class="hover:text-yellow-300">About</a></li>
+            <li><a href="#" id="registerBtn" class="hover:text-yellow-300">Register</a></li>
+            <li><a href="#" id="viewBtn" class="hover:text-yellow-300">View Registration</a></li>
+            <li>
+              <a href="#contact" class="bg-yellow-400 text-purple-800 px-3 py-1 rounded hover:bg-yellow-300 transition">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ================= HOME SECTION ================= -->
+    <section id="home" class="bg-gradient-to-r from-purple-600 to-pink-500 text-white py-20 text-center section">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-4xl font-bold mb-4">Welcome to the College Event Hub 🎉</h2>
+        <p class="text-lg mb-6">
+          Explore, participate, and celebrate the best college fests and activities all in one place.
+        </p>
+        <a href="#" id="exploreEvents" class="bg-yellow-400 text-purple-800 px-6 py-3 rounded-md font-semibold hover:bg-yellow-300 transition">
+          Explore Events
+        </a>
+      </div>
+    </section>
+
+    <!-- ================= EVENTS SECTION ================= -->
+    <section id="events" class="py-16 bg-gray-100 section">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-3xl font-extrabold text-center text-gray-900 mb-12">Upcoming Events</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+          <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition">
+            <img src="https://cdn.pixabay.com/photo/2023/07/26/09/26/business-8150776_1280.jpg">
+            <h3 class="text-2xl font-bold text-purple-700 mb-2">Tech Innovation Fair</h3>
+            <p class="text-gray-600 mb-3">Explore innovative projects and ideas</p>
+            <p class="text-sm text-gray-500 mb-4">
+              Participate in coding, robotics, and design challenges.
+            </p>
+            <p>Date: 10 March 2026</p>
+            <button class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700" onclick="selectEvent('Tech Innovation Fair')">Register</button>
+          </div>
+
+          <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition">
+            <img src="https://cdn.pixabay.com/photo/2016/11/23/15/48/audience-1853662_1280.jpg">
+            <h3 class="text-2xl font-bold text-purple-700 mb-2">Cultural Fest</h3>
+            <p class="text-gray-600 mb-3">Celebrating Creativity and Culture</p>
+            <p class="text-sm text-gray-500 mb-4">
+              Show your talent in dance, drama, and music.
+            </p>
+            <p>Date: 11 March 2026</p>
+            <button class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700" onclick="selectEvent('Cultural Fest')">Register</button>
+          </div>
+
+          <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition">
+            <img src="https://thumbs.dreamstime.com/b/sports-equipment-football-basketball-baseball-soccer-tennis-ball-volleyball-boxing-gloves-badminton-as-symbol-online-138083068.jpg">
+            <h3 class="text-2xl font-bold text-purple-700 mb-2">Sports Tournament</h3>
+            <p class="text-gray-600 mb-3">Play with passion, win with pride</p>
+            <p class="text-sm text-gray-500 mb-4">
+              Participate in football, volleyball, cricket and athletics.
+            </p>
+            <p>Date: 12 March 2026</p>
+            <button class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700" onclick="selectEvent('Sports Tournament')">Register</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= REGISTRATION SECTION ================= -->
+    <section id="register" class="py-16 bg-gray-50 section">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h2 id="registration-heading" class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Register for Events</h2>
+          <p class="mt-4 text-xl text-gray-500">Fill out the form below to secure your spot</p>
+        </div>
+
+        <div class="mt-12 bg-white shadow-xl rounded-lg overflow-hidden p-8">
+          <form id="registration-form" class="space-y-6">
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Full Name</label>
+              <input type="text" name="student-name" required class="mt-1 w-full border-gray-300 rounded-md px-3 py-2 border focus:ring-purple-500 focus:border-purple-500" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Email Address</label>
+              <input type="email" name="student-email" required class="mt-1 w-full border-gray-300 rounded-md px-3 py-2 border focus:ring-purple-500 focus:border-purple-500" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Event</label>
+              <select name="selected-event" id="selected-event" required class="mt-1 w-full border-gray-300 rounded-md px-3 py-2 border focus:ring-purple-500 focus:border-purple-500">
+                <option value="">Select an event</option>
+                <option>Cultural Fest</option>
+                <option>Tech Innovation Fair</option>
+                <option>Sports Tournament</option>
+              </select>
+            </div>
+            <button type="submit" id="submit-btn" class="w-full py-3 px-4 rounded-md text-white bg-purple-600 hover:bg-purple-700 transition-colors">
+              Register Now
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= VIEW REGISTRATION SECTION ================= -->
+    <section id="view" class="py-16 bg-white section hidden">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-extrabold text-center text-gray-900 mb-8">View Registrations</h2>
+        <div class="overflow-x-auto bg-gray-50 shadow-md rounded-lg">
+          <table class="min-w-full text-sm text-left text-gray-700">
+            <thead class="bg-purple-600 text-white">
+              <tr>
+                <th class="px-6 py-3">Name</th>
+                <th class="px-6 py-3">Email</th>
+                <th class="px-6 py-3">Event</th>
+              </tr>
+            </thead>
+            <tbody id="registration-data" class="divide-y divide-gray-200"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT SECTION ================= -->
+<section id="about" class="py-16 bg-white section hidden">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">About the Event</h2>
+    <p class="mt-6 text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
+      Welcome to the <strong>College Event Hub</strong> – a platform that celebrates creativity, innovation, and teamwork.
+      Every participant is expected to maintain discipline and show respect throughout all events.
+    </p>
+
+    <h3 class="mt-10 text-2xl font-semibold text-purple-700">📜 Rules & Regulations</h3>
+    <ul class="mt-6 text-left max-w-3xl mx-auto list-disc list-inside text-gray-700 space-y-2">
+      <li>All participants must carry their <strong>college ID card</strong> at all times.</li>
+      <li>Wear <strong>eye guards or safety gear</strong> when required for technical or sports events.</li>
+      <li>Maintain proper <strong>discipline and behavior</strong> within the college premises.</li>
+      <li><strong>Respect judges, coordinators, and volunteers</strong> at all times.</li>
+      <li><strong>Mobile phones</strong> must be kept on silent during event sessions.</li>
+      <li>Do not make unnecessary <strong>noise or disturbance</strong> during performances or rounds.</li>
+      <li>Any damage to property will lead to <strong>strict disciplinary action</strong>.</li>
+      <li>Be <strong>punctual</strong> for your event slots and rehearsals.</li>
+      <li>Follow all <strong>safety instructions</strong> given by coordinators.</li>
+    </ul>
+
+    <p class="mt-8 text-gray-600 max-w-3xl mx-auto">
+      Let’s create memorable moments through discipline, enthusiasm, and teamwork! 🎉
+    </p>
+  </div>
+</section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer id="contact" class="bg-gray-900 text-white py-10">
+      <div class="max-w-6xl mx-auto text-center space-y-4">
+        <h3 class="text-xl font-semibold">Stay Connected</h3>
+        <p class="text-gray-400">Follow us on social media or join our WhatsApp group for updates!</p>
+        <div class="flex justify-center gap-6 mt-4">
+          <a href="https://www.instagram.com/srushti.?utm_source=qr&igsh=MXJleWs0cGx5bXlmdA==" target="_blank" class="bg-pink-500 px-4 py-2 rounded-md hover:bg-pink-600 transition">Instagram</a>
+          <a href="https://chat.whatsapp.com/E9mUDQJ9OtAHmYFE3VRJTJ" target="_blank" class="bg-green-500 px-4 py-2 rounded-md hover:bg-green-600 transition">WhatsApp Group</a>
+        </div>
+        <p class="text-gray-500 text-sm mt-6">© 2026 College Event Hub. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- ================= SCRIPT ================= -->
+
+<!-- REPLACE your current <script>...</script> with this block -->
+<script>
+  // grab sections (elements with class "section")
+  const sections = Array.from(document.querySelectorAll(".section"));
+
+  // helper: show a section by id, hide others
+  function showSection(id) {
+    sections.forEach(sec => sec.classList.add("hidden"));
+    const el = document.getElementById(id);
+    if (el) el.classList.remove("hidden");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
+    // if viewing registrations, refresh table
+    if (id === "view") displayRegistrations();
+  }
+
+  // safely attach click handler if element exists
+  function onClick(id, fn) {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener("click", fn);
+  }
+
+  // Nav buttons
+  onClick("homeBtn", () => showSection("home"));
+  onClick("eventsBtn", () => showSection("events"));
+  onClick("aboutBtn", () => showSection("about"));
+  onClick("registerBtn", () => showSection("register"));
+  onClick("viewBtn", () => showSection("view"));
+  onClick("exploreEvents", (e) => {
+    e?.preventDefault?.();
+    showSection("events");
+  });
+
+  // Back button (if present in About)
+  const backBtn = document.getElementById("backBtn");
+  if (backBtn) backBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    showSection("home");
+  });
+
+  // ---- Registration form handling ----
+  const registrationForm = document.getElementById("registration-form");
+  // use existing save logic, but guard missing elements
+  if (registrationForm) {
+    registrationForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const name = registrationForm["student-name"]?.value?.trim() || "";
+      const email = registrationForm["student-email"]?.value?.trim() || "";
+      const event = registrationForm["selected-event"]?.value || "";
+
+      if (!name || !email || !event) {
+        alert("Please fill all fields before submitting.");
+        return;
+      }
+
+      const newEntry = { name, email, event };
+      const data = JSON.parse(localStorage.getItem("registrations") || "[]");
+      data.push(newEntry);
+      localStorage.setItem("registrations", JSON.stringify(data));
+
+      alert("Registration successful!");
+      registrationForm.reset();
+    });
+  }
+
+  // ---- Display registrations in View section ----
+  const registrationData = document.getElementById("registration-data");
+  function displayRegistrations() {
+    if (!registrationData) return;
+    const data = JSON.parse(localStorage.getItem("registrations") || "[]");
+    registrationData.innerHTML = "";
+    if (!data.length) {
+      registrationData.innerHTML = <tr><td class="px-6 py-3" colspan="3">No registrations yet.</td></tr>;
+      return;
+    }
+    // build rows safely
+    const rows = data.map(reg => {
+      const safeName = String(reg.name || "");
+      const safeEmail = String(reg.email || "");
+      const safeEvent = String(reg.event || "");
+      return `<tr class="hover:bg-purple-50">
+                <td class='px-6 py-3'>${safeName}</td>
+                <td class='px-6 py-3'>${safeEmail}</td>
+                <td class='px-6 py-3'>${safeEvent}</td>
+              </tr>`;
+    }).join("");
+    registrationData.innerHTML = rows;
+  }
+
+  // Show Home initially
+  showSection("home");
+
+  // Also, if someone navigates with URL hash (optional convenience)
+  window.addEventListener("hashchange", () => {
+    const id = location.hash.replace("#", "");
+    if (id && document.getElementById(id)) showSection(id);
+  });
+</script>
+  </body>
+</html>
